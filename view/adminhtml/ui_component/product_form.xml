@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <fieldset name="search_engine_optimization">
-        <field name="seo_title_catalog" sortOrder="135" formElement="input">
+    <fieldset name="search_engine_optimisation">
+        <field name="seo_title_product" sortOrder="135" formElement="input">
             <settings>
                 <dataType>string</dataType>
-                <label translate="true">SEO Title</label>
+                <label translate="true">SEO Title 2</label>
             </settings>
         </field>
     </fieldset>

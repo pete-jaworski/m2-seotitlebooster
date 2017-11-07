@@ -74,7 +74,7 @@ class UpgradeData implements UpgradeDataInterface
             \Magento\Catalog\Model\Category::ENTITY,
             'seo_title_catalog',
             [
-                'type' => 'text',
+                'type' => 'varchar',
                 'label' => 'SEO Title',
                 'input' => 'text',
                 'sort_order' => 2,                
