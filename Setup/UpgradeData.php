@@ -42,11 +42,15 @@ class UpgradeData implements UpgradeDataInterface
         
         $setup->startSetup();
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
-
+        
+        $eavSetup->removeAttribute(\Magento\Catalog\Model\Product::ENTITY, 'seo_title');
+        $eavSetup->removeAttribute(\Magento\Catalog\Model\Category::ENTITY, 'seo_title');
+        
+        echo "removed";
         
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
-            'seo_title',
+            'seo_title_product',
             [
                 'type' => 'text',
                 'label' => 'SEO Title',
@@ -68,7 +72,7 @@ class UpgradeData implements UpgradeDataInterface
         
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Category::ENTITY,
-            'seo_title',
+            'seo_title_catalog',
             [
                 'type' => 'text',
                 'label' => 'SEO Title',
