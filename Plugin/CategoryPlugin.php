@@ -36,8 +36,7 @@ class CategoryPlugin
      */
     public function afterGetName(\Magento\Catalog\Model\Category $subject, $result)
     {
-        return $result.'+';
-        return $this->titleReplacer->replace($subject); 
+        return $this->titleReplacer->replace($subject) ? $this->titleReplacer->replace($subject) : $result;
     }
  
 }

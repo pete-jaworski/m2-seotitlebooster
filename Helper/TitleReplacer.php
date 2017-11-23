@@ -8,19 +8,44 @@ namespace PiotrJaworski\SEOTitleBooster\Helper;
  */
 class TitleReplacer 
 {
-    //put your code here
+    /**
+     * @var PiotrJaworski\SEOTitleBooster\Helper\ModuleEnabled
+     */
+    protected $isEnabled;
+
+
+    /**
+     * Constructor
+     * 
+     * @param \PiotrJaworski\SEOTitleBooster\Helper\ModuleEnabled $isEnabled
+     */
+    public function __construct(\PiotrJaworski\SEOTitleBooster\Helper\ModuleEnabled $isEnabled)
+    {
+        $this->isEnabled = $isEnabled;
+    }
     
+    
+    /**
+     * Replaces title with SEO title
+     * 
+     * @param \Magento\Catalog\Model\Product|\Magento\Catalog\Model\Category $object
+     * @return boolean
+     */
     public function replace($object)
     {
+        if(!$this->isEnabled->enabled()){
+            return false;
+        }
         
-        return '---';
         if($object instanceof \Magento\Catalog\Model\Category){
-            return $object->getName()."**";
+            return $object->getSeoTitleCatalog();
         } 
         
         if($object instanceof \Magento\Catalog\Model\Product){
-            return $object->getName()."++";
+            return $object->getSeoTitleProduct();
         } 
+        
+        return false;
         
     }
     
