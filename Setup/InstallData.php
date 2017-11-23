@@ -1,5 +1,5 @@
 <?php
-namespace PiotrJaworski\PiotrJaworski_SEOTitleBooster\Setup;
+namespace PiotrJaworski\SEOTitleBooster\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
