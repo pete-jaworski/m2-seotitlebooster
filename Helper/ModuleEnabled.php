@@ -10,6 +10,6 @@ class ModuleEnabled
 {
     public function enabled()
     {
-        return true; 
+        return false; 
     }
 }
