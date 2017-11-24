@@ -6,27 +6,8 @@ namespace PiotrJaworski\SEOTitleBooster\Plugin;
  *
  * @author Piotr Jaworski
  */
-class CategoryPlugin
+class CategoryPlugin extends \PiotrJaworski\SEOTitleBooster\Plugin\AbstractPlugin
 {
-    /**
-     * TitleReplacer Helper
-     *
-     * @var \PiotrJaworski\SEOTitleBooster\Helper\TitleReplacer
-     */    
-    protected $titleReplacer = null;
-    
-    
-    /**
-     * Constructor
-     * 
-     * @param \PiotrJaworski\SEOTitleBooster\Helper\TitleReplacer $titleReplacer
-     */
-    public function __construct(\PiotrJaworski\SEOTitleBooster\Helper\TitleReplacer $titleReplacer)
-    {
-        $this->titleReplacer = $titleReplacer;
-    }
-    
-    
     /**
      * Replaces default title with SEO one
      * 
@@ -36,6 +17,10 @@ class CategoryPlugin
      */
     public function afterGetName(\Magento\Catalog\Model\Category $subject, $result)
     {
+        if(!in_array(\PiotrJaworski\SEOTitleBooster\Model\Config\Target::TARGET_CATEGORY_TITLE, explode(',',$this->scopeConfig->getValue(self::MODULE_CONFIG_NAME, \Magento\Store\Model\ScopeInterface::SCOPE_STORE)))){
+            return $result;
+        }
+        
         return $this->titleReplacer->replace($subject) ? $this->titleReplacer->replace($subject) : $result;
     }
  
