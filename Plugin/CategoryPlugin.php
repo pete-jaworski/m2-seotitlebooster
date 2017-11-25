@@ -8,6 +8,7 @@ namespace PiotrJaworski\SEOTitleBooster\Plugin;
  */
 class CategoryPlugin extends \PiotrJaworski\SEOTitleBooster\Plugin\AbstractPlugin
 {
+     
     /**
      * Replaces default title with SEO one
      * 

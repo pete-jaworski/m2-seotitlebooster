@@ -9,6 +9,12 @@ namespace PiotrJaworski\SEOTitleBooster\Plugin;
 abstract class AbstractPlugin
 {
     /**
+     * Holds object type
+     */
+    protected $type = '';
+    
+    
+    /**
      * Hold module config name
      */
     const MODULE_CONFIG_NAME = 'piotrjaworski_seotitlebooster/general/seotitlebooster_target';
@@ -42,4 +48,5 @@ abstract class AbstractPlugin
         $this->titleReplacer = $titleReplacer;
         $this->scopeConfig = $scopeConfig;
     }    
+     
 }
