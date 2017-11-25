@@ -36,18 +36,6 @@ class TitleReplacer
         if(!$this->isEnabled->enabled()){
             return false;
         }
-        
-        if($object instanceof \Magento\Catalog\Model\Category){
-            return $object->getSeoTitleCatalog();
-        } 
-        
-        if($object instanceof \Magento\Catalog\Model\Product){
-            return $object->getSeoTitleProduct();
-        } 
-        
-        return false;
-        
+        return $object->getSeoTitleCatalog().$object->getSeoTitleProduct();
     }
-    
-    
 }

@@ -21,7 +21,6 @@ class CategoryPlugin extends \PiotrJaworski\SEOTitleBooster\Plugin\AbstractPlugi
         if(!in_array(\PiotrJaworski\SEOTitleBooster\Model\Config\Target::TARGET_CATEGORY_TITLE, explode(',',$this->scopeConfig->getValue(self::MODULE_CONFIG_NAME, \Magento\Store\Model\ScopeInterface::SCOPE_STORE)))){
             return $result;
         }
-        
         return $this->titleReplacer->replace($subject) ? $this->titleReplacer->replace($subject) : $result;
     }
  
